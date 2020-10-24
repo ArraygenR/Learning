@@ -1,0 +1,5 @@
+tup1 = (1,2,3)
+tup2 = (1,2,3)
+print(tup1 == tup2)
+print(tup1 is tup2)
+print(id(tup1), id(tup2))
