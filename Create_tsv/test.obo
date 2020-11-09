@@ -1,0 +1,34 @@
+
+[Term]
+id: GO:0015470
+name: obsolete bacteriocin activity
+namespace: molecular_function
+def: "OBSOLETE. Polypeptide antibiotic secreted by bacteria and able to kill bacteria of susceptible strains after absorption by specific cell surface receptor." [ISBN:0198547684]
+comment: This term was made obsolete because it represents a gene product.
+synonym: "bacteriocin activity" EXACT []
+is_obsolete: true
+consider: GO:0005102
+consider: GO:0019835
+
+[Term]
+id: GO:0015471
+name: nucleoside-specific channel forming porin activity
+namespace: molecular_function
+def: "Enables the energy independent passage of nucleoside, sized less than 1000 Da, across a membrane. The transmembrane portions of porins consist exclusively of beta-strands which form a beta-barrel. They are found in the outer membranes of Gram-negative bacteria, mitochondria, plastids and possibly acid-fast Gram-positive bacteria." [GOC:mtg_transport]
+is_a: GO:0005337 ! nucleoside transmembrane transporter activity
+is_a: GO:0015288 ! porin activity
+
+[Term]
+id: GO:0015472
+name: obsolete fimbrium-specific chaperone activity
+namespace: molecular_function
+def: "OBSOLETE. Assists in the correct assembly of fimbria, extracellular organelles that are used to attach a bacterial cell to a surface, but is not a component of the fimbrium when performing its normal biological function." [GOC:jl, GOC:rb, PMID:7906046]
+comment: This term was made obsolete because it refers to a class of proteins and a biological process rather than a molecular function.
+synonym: "fimbrium-specific chaperone activity" EXACT []
+is_obsolete: true
+consider: GO:0009297
+consider: GO:0030674
+consider: GO:0044183
+consider: GO:0051082
+
+
