@@ -77,7 +77,7 @@ if __name__ == "__main__":
         input_annotation = sys.argv[2]#"goa_human_subset.gaf"
         output_filename = "result.tsv"
         if len(sys.argv) > 3:
-            output_filename = sys.argv[3]
+            output_filename = sys.argv[3]+".tsv"
         #print(input_terms, input_annotation, output_filename)
 
         # open file for writing
