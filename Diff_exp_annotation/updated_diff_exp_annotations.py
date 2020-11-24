@@ -16,7 +16,7 @@ def f_transcript_to_protein(blast_filename):
         transcript, isoform = qseqid.split("|")
         gi_type, gi, sp_type, sp, sp_name = sseqid.split("|")
         sp_id, sp_version = sp.split(".")
-        if float(pident) >= 99:
+        if float(pident) > 99 and transcript not in transcript_to_protein.keys():
             transcript_to_protein[transcript] = sp_id
 
     blast_file.close()
@@ -82,7 +82,7 @@ def f_diff_exp(diff_exp_filename, report_filename, transcript_to_protein, gene_t
         transcript, sp_ds, sp_hs, sp_log, sp_plat = line.rstrip().split("\t")
 
         protein = transcript_to_protein.get(transcript, "NA")
-        go_ids = gene_to_go.get(protein, "NA")
+        go_ids = gene_to_go.get(protein, ["NA"])
 
         go_desc=''
         go_ids = list(set(go_ids))
@@ -98,22 +98,6 @@ def f_diff_exp(diff_exp_filename, report_filename, transcript_to_protein, gene_t
 
     diff_exp_file.close()
     report_file.close()
-
-
-# find parent term
-def find_parent_term(go_id, go_dict):
-    list1 = []
-    # create list of all elements and sibling elements
-    if go_id in go_dict.keys():
-        # you will get is_a
-        list1 = go_dict[go_id]
-        # for fetching is_a of fetched is_a one by one and storing to list1
-        for l in list1:
-            if l in go_dict.keys():
-                list1.extend(go_dict[l])
-    # remove duplicates of created list using set
-    return(list(set(list1)))
-
 
 if __name__ == "__main__":
     blast_filename = "blastp.outfmt6"
