@@ -23,6 +23,7 @@ class BlastHit:
             return False
 
 if __name__ == "__main__":
+    # for testig purpose
     data = "c0_g1_i1|m.1	gi|74665200|sp|Q9HGP0.1|PVG4_SCHPO	100.00	372	0	0	1	372	1	372	0.0	  754".split("\t")
     bh = BlastHit(data[0], data[1].split("|")[3].split(".")[0], data[2], data[4])
 
